@@ -3,6 +3,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# working file - mp3 and csv
+*.mp3
+*.csv
+
 # C extensions
 *.so
 
@@ -47,6 +51,7 @@ htmlcov/
 nosetests.xml
 coverage.xml
 *.cover
+*.py,cover
 .hypothesis/
 .pytest_cache/
 
@@ -90,8 +95,12 @@ ipython_config.py
 #   install all needed dependencies.
 #Pipfile.lock
 
-# celery beat schedule file
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow
+__pypackages__/
+
+# Celery stuff
 celerybeat-schedule
+celerybeat.pid
 
 # SageMath parsed files
 *.sage.py
@@ -112,9 +121,6 @@ venv.bak/
 # Rope project settings
 .ropeproject
 
-# mkdocs documentation
-/site
-
 # mypy
 .mypy_cache/
 .dmypy.json
@@ -122,3 +128,30 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# VSCode stuff
+.vscode
+
+# pycharm stuff
+.idea
+
+# Nova stuff
+.nova
+
+# Mac temp files
+.DS_Store
+
+# DB stuff
+.db
+.db-shm
+.db-wal
+ß
+# Generated site files
+/site
+
+# Zip files
+*.zip
+
+# Cache files
+.ssg_cache*.json
+gui_profiles.json
