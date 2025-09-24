@@ -7,17 +7,21 @@
 
 📦 ### Step 1: Install Dependencies
 ```
-pip install pillow pystray schedule
+pip install pillow pystray schedule pyinstaller
 ```
-
-On Linux, you may also need:
-```
-sudo apt install libnotify-bin
-```
+Or use the requirements.txt file
 
 To create an exe run:
 ```
-pyinstaller --clean --onefile --windowed --icon=wallpaper.ico --add-data "wallpaper.ico;." main.py
+pyinstaller --clean --onefile --windowed --icon=wallpaper.ico \
+  --add-data "wallpaper.ico;." \
+  --add-data "wallpaper-disabled.ico;." \
+  main.py
+```
+
+Alternatively, if you prefer using the spec file (which already bundles both icons), run:
+```
+pyinstaller main.spec --clean
 ```
 
 ### Autostart on Login:
