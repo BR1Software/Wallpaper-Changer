@@ -1,3 +1,4 @@
+import sys
 import os
 import random
 import time
@@ -8,11 +9,18 @@ import schedule
 import pystray
 from pystray import MenuItem as item
 import ctypes
+from PIL import Image
 
 # CONFIG
 WALLPAPER_DIR = Path.home() / "Documents" / "Backgrounds"
 INTERVAL_MINUTES = 30
 rotation_enabled = True
+
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    if hasattr(sys, '_MEIPASS'):
+        return os.path.join(sys._MEIPASS, relative_path)
+    return os.path.join(os.path.abspath("."), relative_path)
 
 def get_random_image(folder):
     return random.choice([
@@ -44,8 +52,7 @@ def quit_app(icon, item):
     icon.stop()
 
 def create_tray_icon():
-    from PIL import Image
-    icon_image = Image.open("wallpaper.ico")
+    icon_image = Image.open(resource_path("wallpaper.ico"))
 
     menu = (
         item("Change Now", lambda icon, item: rotate_wallpaper()),

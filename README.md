@@ -17,7 +17,7 @@ sudo apt install libnotify-bin
 
 To create an exe run:
 ```
-pyinstaller --onefile --windowed --icon=wallpaper.ico main.py
+pyinstaller --clean --onefile --windowed --icon=wallpaper.ico --add-data "wallpaper.ico;." main.py
 ```
 
 ### Autostart on Login:
