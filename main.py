@@ -4,7 +4,6 @@ import random
 import time
 import threading
 from pathlib import Path
-from PIL import Image
 import schedule
 import pystray
 from pystray import MenuItem as item
