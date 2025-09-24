@@ -15,4 +15,7 @@ On Linux, you may also need:
 sudo apt install libnotify-bin
 ```
 
-
+To create an exe run:
+```
+pyinstaller --onefile --windowed --icon=wallpaper.ico main.py
+```
