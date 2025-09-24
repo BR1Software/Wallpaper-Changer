@@ -19,3 +19,7 @@ To create an exe run:
 ```
 pyinstaller --onefile --windowed --icon=wallpaper.ico main.py
 ```
+
+### Autostart on Login:
+- Press Win + R, type shell:startup
+- Place a shortcut to your .exe in that folder
